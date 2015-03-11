@@ -1,0 +1,92 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Currency Converter"
+        android:textSize="30sp"
+        android:id="@+id/tv_intro_text"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+    <ScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/tv_intro_text">
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="From:"
+                    android:textSize="20sp"
+                    android:id="@+id/tv_from" />
+                <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_from"
+                    android:id="@+id/spinner_from"
+                    android:prompt="@string/select_currency"
+                    android:entries="@array/currency_arrays"
+                    android:text="USD"
+                    android:layout_toLeftOf="@+id/spinner_to"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="To:"
+                    android:textSize="20sp"
+                    android:id="@+id/tv_to"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true" />
+                <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_to"
+                    android:entries="@array/currency_arrays"
+                    android:id="@+id/spinner_to"
+                    android:text="USD"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignLeft="@+id/tv_to"
+                    android:layout_alignStart="@+id/tv_to" />
+            </RelativeLayout>
+            <EditText
+                android:layout_width="wrap_content"
+                android:hint="@string/et_amount_hint"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/et_amount_to_convert" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_convert"
+                android:onClick="onConvert"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/convert"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_return"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:layout_gravity="center_horizontal"
+                android:text="this is the return" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
